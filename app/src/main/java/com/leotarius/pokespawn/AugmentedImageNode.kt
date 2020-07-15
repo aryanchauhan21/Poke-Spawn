@@ -45,7 +45,7 @@ class AugmentedImageNode(
         val maxModelEdgeSize = max(renderableBox.size.x, renderableBox.size.z)
         val maxImageEdgeSize = max(image.extentX, image.extentZ)
 
-        val modelScale = (maxImageEdgeSize / maxModelEdgeSize) * 3 / 2f
+        val modelScale = (maxImageEdgeSize / maxModelEdgeSize)/2f
 
         modelNode.localScale = Vector3(modelScale, modelScale, modelScale)
         startAnimation()

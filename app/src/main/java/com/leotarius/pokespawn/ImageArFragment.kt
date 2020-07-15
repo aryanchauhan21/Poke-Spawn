@@ -40,7 +40,7 @@ class ImageArFragment : ArFragment() {
 
     private fun chooseNewImage(){
         Intent(Intent.ACTION_GET_CONTENT).run {
-            type = "image/"
+            type = "image/*"
             startActivityForResult(this, REQUEST_CODE_CHOSEN_IMAGE)
         }
     }
@@ -61,7 +61,7 @@ class ImageArFragment : ArFragment() {
     private fun createImageDatabaseWithSingleImage(session: Session?, imageUri: Uri): AugmentedImageDatabase {
         val database = AugmentedImageDatabase(session)
         val bmp = loadAugumentedImageBitmap(imageUri)
-        database.addImage("myImage.jpeg", bmp)
+        database.addImage("myImage.jpg", bmp)
         return database
     }
 
